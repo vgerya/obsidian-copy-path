@@ -1,94 +1,118 @@
-# Obsidian Sample Plugin
+# Copy Path Plugin for Obsidian
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+A simple yet powerful Obsidian plugin that adds convenient "Copy Path..." context menu options to quickly copy file and folder paths in different formats.
 
-This project uses TypeScript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in TypeScript Definition format, which contains TSDoc comments describing what it does.
+## ✨ Features
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+- **Multiple Context Menus**: Available in file explorer, tab headers, and editor content
+- **Three Path Formats**:
+  - **Path from Vault Root**: Relative path from your vault (e.g., `folder/file.md`)
+  - **Absolute Path**: Full system path (e.g., `/Users/username/MyVault/folder/file.md`)
+  - **File Name**: Just the filename (e.g., `file.md`)
+- **Clean UI**: Organized submenu with intuitive icons
+- **Works Everywhere**: Files, folders, and all file types
+- **Cross-Platform**: Works on desktop and mobile
 
-## First time developing plugins?
+## 🚀 Installation
 
-Quick starting guide for new plugin devs:
+### From Community Plugins (Recommended)
+1. Open Obsidian Settings
+2. Go to Community Plugins
+3. Search for "Copy Path"
+4. Install and enable the plugin
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+### Manual Installation
+1. Download the latest release from [GitHub Releases](https://github.com/yourusername/obsidian-copy-path-plugin/releases)
+2. Extract the files to your vault's plugins folder: `VaultFolder/.obsidian/plugins/copy-path-plugin/`
+3. Reload Obsidian
+4. Enable the plugin in Community Plugins settings
 
-## Releasing new releases
-
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
-
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
-
-## Adding your plugin to the community plugin list
-
-- Check the [plugin guidelines](https://docs.obsidian.md/Plugins/Releasing/Plugin+guidelines).
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
-
-## How to use
-
-- Clone this repo.
-- Make sure your NodeJS is at least v16 (`node --version`).
-- `npm i` or `yarn` to install dependencies.
-- `npm run dev` to start compilation in watch mode.
-
-## Manually installing the plugin
-
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
-
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
+### For Developers
+```bash
+git clone https://github.com/yourusername/obsidian-copy-path-plugin.git
+cd obsidian-copy-path-plugin
+npm install
+npm run build
 ```
 
-If you have multiple URLs, you can also do:
+## 📖 Usage
 
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
+### File Explorer
+Right-click on any file or folder in the file explorer → **Copy Path...** → Choose your format
 
-## API Documentation
+### Tab Context Menu
+Right-click on any tab header → **Copy Path...** → Choose your format
 
-See https://github.com/obsidianmd/obsidian-api
+### Editor Context Menu
+Right-click anywhere in the editor → **Copy Path...** → Choose your format
+
+## 🎯 Use Cases
+
+- **Documentation**: Quickly reference file paths in your notes
+- **Scripting**: Copy paths for automation scripts
+- **External Tools**: Share file locations with other applications
+- **Backup**: Reference files for backup or sync operations
+- **Development**: Copy paths for linking assets or resources
+
+## ⚙️ Settings
+
+The plugin includes settings to customize its behavior:
+
+- **Show confirmation notices**: Toggle success messages when copying paths
+- **Enable in file explorer**: Show/hide menu in file explorer context menu
+- **Enable in tab menu**: Show/hide menu in tab context menu
+- **Enable in editor menu**: Show/hide menu in editor context menu
+
+## 🔧 Configuration
+
+No complex configuration needed! The plugin works out of the box with sensible defaults.
+
+## 🐛 Troubleshooting
+
+### Path not copying?
+- Ensure your browser allows clipboard access
+- Check that JavaScript is enabled
+- Try refreshing Obsidian
+
+### Menu not appearing?
+- Verify the plugin is enabled in Community Plugins
+- Check that you're right-clicking in the correct context
+- Restart Obsidian if needed
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests.
+
+### Development Setup
+1. Clone the repository
+2. Run `npm install`
+3. Run `npm run dev` for development mode
+4. Run `npm run build` for production build
+
+## 📝 Changelog
+
+### v1.0.0
+- Initial release
+- Added context menus for file explorer, tabs, and editor
+- Three path format options
+- Cross-platform support
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Support
+
+If you find this plugin helpful, please:
+- ⭐ Star the repository on GitHub
+- 🐛 Report bugs or suggest features via GitHub Issues
+- 💬 Share your feedback in the Obsidian community
+
+## 📧 Contact
+
+- GitHub: [@yourusername](https://github.com/yourusername)
+- Obsidian Forum: [Your Forum Username]
+
+---
+
+**Made with ❤️ for the Obsidian community**
