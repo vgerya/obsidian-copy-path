@@ -1,11 +1,11 @@
 {
 	"id": "obsidian-copy-path",
 	"name": "Copy Path",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Copy file and folder paths in various formats from Obsidian",
 	"author": "Vitalii Heria",
 	"authorUrl": "https://github.com/vgerya",
-    "fundingUrl": "https://github.com/vgerya/obsidian-copy-path",
+	"fundingUrl": "https://github.com/vgerya/obsidian-copy-path",
 	"isDesktopOnly": false
 }
